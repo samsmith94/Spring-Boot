@@ -106,5 +106,24 @@ public class AppConfig extends WebSecurityConfigurerAdapter {
   }
 }
 ```
+
+```java
+@Bean
+public PasswordEncoder encoder() {
+  return new BCryptPasswordEncoder();
+}
+
+...
+
+  @Override
+  public void configure(AuthenticationManagerBuilder auth) throws Exception
+  {
+    auth.inMemoryAuthentication()
+      .passwordEncoder(encoder())
+      .withUser("gabor").password("pass").roles("USER", "ADMIN")
+      .and()
+      .withUser("bob").password("pass").roles("ADMIN")
+```
+
 #### Autorizáció
 ### REST autentikáció és autorizáció
