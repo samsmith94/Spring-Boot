@@ -11,7 +11,20 @@
 ```
 
 ### Servlet API alapok (HttpSession, Filter)
-
+#### HTTP Session
+* Kérések sorozata közötti állapot megőrzése igény lehet (pl. belépett fehasználó azonosítója)
+* Ugyanakkor a HTTP állapotmentes
+* Megoldások:
+  * HTTP cookie (neve by default? JSESSIONID)
+  * URL rewrite (response.encodeURL())
+  * Hidden FORM mező
+* Session timeout
+  * általában 30 perc a default
+* Lejárat: időlimit vagy session.invalidate()
+* Elérése:
+  * HttpSession session = request.getSession();
+  * session.setAttribute("currentUser", myUser);
+  * MyUser user = (MyUser)session.getAttribute("currentUser");
 
 ### Spring Security (autentikáció és autorizáció)
 
