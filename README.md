@@ -86,6 +86,7 @@ public class MyFilter implements Filter {
   * X.509 digitális igazolvány
   * OpenID
   * OAuth
+##### Példa
 ```java
 @Configuration
 @EnableWebSecurity
@@ -106,7 +107,10 @@ public class AppConfig extends WebSecurityConfigurerAdapter {
   }
 }
 ```
-
+##### Jelszavak kezelése
+* Spring Security 5 kötelező PasswordEncoder definiálása
+  * Ez lehet akár a NoOpPasswordEncoder is, de explicit kérni kell
+  * Tipikus választás: BCryptEncoder
 ```java
 @Bean
 public PasswordEncoder encoder() {
@@ -114,7 +118,9 @@ public PasswordEncoder encoder() {
 }
 
 ...
-
+@Configuration
+@EnableWebSecurity
+public class AppConfig extends WebSecurityConfigurerAdapter {
   @Override
   public void configure(AuthenticationManagerBuilder auth) throws Exception
   {
@@ -123,6 +129,8 @@ public PasswordEncoder encoder() {
       .withUser("gabor").password("pass").roles("USER", "ADMIN")
       .and()
       .withUser("bob").password("pass").roles("ADMIN")
+      ...
+...
 ```
 
 #### Autorizáció
