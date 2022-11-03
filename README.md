@@ -150,6 +150,13 @@ public class AppConfig extends WebSecurityConfigurerAdapter {
       ...
 ...
 ```
+#### Autentikációs felület testre szabása
+* Az előző példában a spring security egy saját formján jelentkeztet be
+* Ha a böngésző saját ablakát akarjuk használni, HTTP BASIC autentikációval: A HTTP BASIC autentikáció base64 kódolva küldi a jelszót, tehát a hálózatot lehallgatva visszafejthető (a HTTPS véd ellene)
+* A HTTP DIGEST autentikáció is beállítható, ekkor challenge-response alapú az autentikáció, maga a jelszó nem utazik a hálózaton
+  * Konfigja kicsit nehézkes (egy spring security átal nyújtott filtert kell beállítani)
+* http.httpBasic();
+
 
 #### Autorizáció
 ### REST autentikáció és autorizáció
