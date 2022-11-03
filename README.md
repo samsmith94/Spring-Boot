@@ -2,12 +2,14 @@
 
 # Table of contents
 
+# Table of contents
+
 - [Spring-Boot](#spring-boot)
-  - [Biztonság](#biztonsg)
+  - [Biztonság](#biztonság)
     - [Alapfogalmak](#alapfogalmak)
     - [Servlet API alapok (HttpSession, Filter)](#servlet-api-alapok-httpsession-filter)
       - [HTTP Session](#http-session)
-      - [Szervelet szűrők](#szervelet-szrk)
+      - [Szervelet szűrők](#szervelet-szűrők)
     - [Spring Security (autentikáció és autorizáció)](#spring-security-autentikci-s-autorizci)
       - [Autentikáció](#autentikci)
       - [Autentikációs lehetőségek](#autentikcis-lehetsgek)
