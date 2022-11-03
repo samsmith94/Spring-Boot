@@ -38,6 +38,18 @@
   * Hozzáférés biztosítása, blokkolása
   * Cache, tömörítés, naplózás, titkosítás
   * Tartalom transzformációja
+* A szűrő tevékenysége:
+  * Headerek vizsgálata
+  * Request objektum átalakítása
+  * Következő szűrő meghívása
+  * Response objektum átalakítása
+  * Szűrő lánc megszakítása (blokkolás), hívás átirányítás
+  * Kivétel dobása
+* Szűrők sorrendje:
+  * A web.xml-ben a <filter> definíciók sorrendje
+  * Az URL leképzésektő független
+* Az elsőt a konténer hívja, az utolsó a szervletet(service()) hívja
+
 ### Spring Security (autentikáció és autorizáció)
 
 ### REST autentikáció és autorizáció
