@@ -6,9 +6,6 @@
 * adat integritás: az adatok módosítása detektálható
 * adatok bizalmassága: csak az arra jogosultak tudják olvasni az adatokat
 * letagadhatatlanság: bizonyítható, hogy egy adott felhasználó elvégzett valamilyen műveletet a rendszerben
-```java
-
-```
 
 ### Servlet API alapok (HttpSession, Filter)
 #### HTTP Session
@@ -49,6 +46,17 @@
   * A web.xml-ben a <filter> definíciók sorrendje
   * Az URL leképzésektő független
 * Az elsőt a konténer hívja, az utolsó a szervletet(service()) hívja
+
+```java
+@Webfilter("/*")
+public class MyFilter implements Filter {
+  public void doFilter() {
+    if () {
+      //
+    }
+  }
+}
+```
 
 ### Spring Security (autentikáció és autorizáció)
 
