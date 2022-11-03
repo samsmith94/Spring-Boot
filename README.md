@@ -1,22 +1,22 @@
 # Spring-Boot
 
+# Table of contents
+
 - [Spring-Boot](#spring-boot)
-  * [Biztonság](#biztons-g)
-    + [Alapfogalmak](#alapfogalmak)
-    + [Servlet API alapok (HttpSession, Filter)](#servlet-api-alapok--httpsession--filter-)
+  - [Biztonság](#biztonsg)
+    - [Alapfogalmak](#alapfogalmak)
+    - [Servlet API alapok (HttpSession, Filter)](#servlet-api-alapok-httpsession-filter)
       - [HTTP Session](#http-session)
-      - [Szervelet szűrők](#szervelet-sz-r-k)
-    + [Spring Security (autentikáció és autorizáció)](#spring-security--autentik-ci---s-autoriz-ci--)
-      - [Autentikáció](#autentik-ci-)
-      - [Autentikációs lehetőségek](#autentik-ci-s-lehet-s-gek)
-        * [Példa](#p-lda)
-        * [Jelszavak kezelése](#jelszavak-kezel-se)
-      - [Autorizáció](#autoriz-ci-)
-    + [REST autentikáció és autorizáció](#rest-autentik-ci---s-autoriz-ci-)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-
+      - [Szervelet szűrők](#szervelet-szrk)
+    - [Spring Security (autentikáció és autorizáció)](#spring-security-autentikci-s-autorizci)
+      - [Autentikáció](#autentikci)
+      - [Autentikációs lehetőségek](#autentikcis-lehetsgek)
+        - [Példa](#plda)
+        - [Jelszavak kezelése](#jelszavak-kezelse)
+      - [Autentikációs felület testre szabása](#autentikcis-fellet-testre-szabsa)
+      - [Autorizáció](#autorizci)
+    - [REST autentikáció és autorizáció](#rest-autentikci-s-autorizci)
+    
 ## Biztonság
 ### Alapfogalmak
 * autentikáció: a felhasználó atonosítása, pl. felhasználónév-jelszó páros, szoftveres/hardveres kulcs, ujjlenyomat, stb. alapján
