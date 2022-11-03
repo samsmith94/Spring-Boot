@@ -51,9 +51,13 @@
 @Webfilter("/*")
 public class MyFilter implements Filter {
   public void doFilter() {
-    if () {
-      //
+    if (servletRequest instanceof HttpServletRequest) {
+      HttpServletRequest request = (HttpServletRequest) servletRequest;
+      HttpServletResponse response = (HttpServletResponse) servletResponse;                 if (request.getParameter("bu") == null) {
+        return;
+      }
     }
+    filterChain.doFilter(servletRequest, servletResponse);
   }
 }
 ```
