@@ -53,7 +53,8 @@ public class MyFilter implements Filter {
   public void doFilter() {
     if (servletRequest instanceof HttpServletRequest) {
       HttpServletRequest request = (HttpServletRequest) servletRequest;
-      HttpServletResponse response = (HttpServletResponse) servletResponse;                 if (request.getParameter("bu") == null) {
+      HttpServletResponse response = (HttpServletResponse) servletResponse;
+      if (request.getParameter("bu") == null) {
         return;
       }
     }
