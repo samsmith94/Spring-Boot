@@ -69,5 +69,22 @@ public class MyFilter implements Filter {
 * Spring-et használ, de bármilyen (nem Spring-es) alkalmazásban felhasználható
   * De Spring Boot környezetben kevesebb konfig szükséges
 * Őse az Acegi Security System
-
+#### Autentikáció
+* Ha védett URL-hez akar hozzáférni a user, és még nincs autentikálva, bejelentkezteti a Spring Security
+* Sikeres login esetén az eredetileg kért oldalra irányít vissza
+#### Autentikációs lehetőségek
+* Autentikációs adatok bekérése:
+  * Saját form
+  * Böngésző által feldobott ablak
+    * HTTP BASIC
+    * HTTP DIGEST
+* Autentikációs adatok tárolása:
+  * Relációs adatbázisban (JDBC)
+    * jelszó akár hash-elve
+  * LDAP
+  * JAAS
+  * X.509 digitális igazolvány
+  * OpenID
+  * OAuth
+#### Autorizáció
 ### REST autentikáció és autorizáció
