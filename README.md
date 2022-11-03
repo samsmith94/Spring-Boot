@@ -30,6 +30,14 @@
   * A Session objektum megosztott, több szálon kezelhetik
   * Elosztott környezet esetén csak szerializálható objektumokat tegyünk bele, különben elveszik
 
+#### Szervelet szűrők
+* Java Servlet Filters (Servlet API 2.3)
+* Cél: megfigyelni, módosítani, közbeavatkozni a kérés illetve a válasz alapján
+* A szűrőket láncba szervezhetjük
+* Használati esetek:
+  * Hozzáférés biztosítása, blokkolása
+  * Cache, tömörítés, naplózás, titkosítás
+  * Tartalom transzformációja
 ### Spring Security (autentikáció és autorizáció)
 
 ### REST autentikáció és autorizáció
