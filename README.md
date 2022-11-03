@@ -86,5 +86,25 @@ public class MyFilter implements Filter {
   * X.509 digitális igazolvány
   * OpenID
   * OAuth
+```java
+@Configuration
+@EnableWebSecurity
+public class AppConfig extends WebSecurityConfigurerAdapter {
+  @Override
+  public void configure(AuthenticationManagerBuilder auth) throws Exception
+  {
+    auth.inMemoryAuthentication()
+      .withUser("gabor").password("pass").roles("USER", "ADMIN")
+      .and()
+      .withUser("bob").password("pass").roles("ADMIN")
+  }
+  @Override
+  protected void configure(HttpSecurity http) throws Exception {
+    http.authorizeRequests()
+      .antMatchers("/admin/*").hasRole("ADMIN")
+      .anyRequest().hasRole("USER");
+  }
+}
+```
 #### Autorizáció
 ### REST autentikáció és autorizáció
