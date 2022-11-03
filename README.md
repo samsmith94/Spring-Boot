@@ -25,6 +25,10 @@
   * HttpSession session = request.getSession();
   * session.setAttribute("currentUser", myUser);
   * MyUser user = (MyUser)session.getAttribute("currentUser");
+* A session fontos erőforrás: minden belehelyezett objektum a szerver memóriahasználatát növeli
+* Amire ügyelni kell:
+  * A Session objektum megosztott, több szálon kezelhetik
+  * Elosztott környezet esetén csak szerializálható objektumokat tegyünk bele, különben elveszik
 
 ### Spring Security (autentikáció és autorizáció)
 
