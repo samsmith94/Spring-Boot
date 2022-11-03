@@ -64,5 +64,10 @@ public class MyFilter implements Filter {
 ```
 
 ### Spring Security (autentikáció és autorizáció)
+* Autentikációt és autorizációt támogató keretrendszer
+* Rugalmasabb, mint a Java EE szabványban benne lévő JAAS (Java Authentication and Authorizatrion Service)
+* Spring-et használ, de bármilyen (nem Spring-es) alkalmazásban felhasználható
+  * De Spring Boot környezetben kevesebb konfig szükséges
+* Őse az Acegi Security System
 
 ### REST autentikáció és autorizáció
