@@ -203,6 +203,14 @@ public void configure(AuthenticationManagerBuilder auth) throws Exception {
     .withDefaultSchema();
 }
 ```
+* A withDefaultSchema() létrehozza a szükséges táblákat:
+  * Felhasználók: users(username, password, enabled)
+  * Szerepek: authorities(username, authority)
+  * Csoportok: groups(id, group_name)
+  * group_authorities(group_id, authority)
+  * group_members(id, username, group_id)
+* Ha ez nem megfelelő, testreszabható, pl. usersByUserNameQuery(), authoritiesByUserNameQuery(), groupAuthoritiesByUsername()
+
 
 #### Autorizáció
 ### REST autentikáció és autorizáció
