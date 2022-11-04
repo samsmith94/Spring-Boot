@@ -167,12 +167,27 @@ public class AppConfig extends WebSecurityConfigurerAdapter {
   .defaultSuccessUrl("/index")
   .permitAll()
 ```
+###### Saját login form használata
 * A /login-ra küldött GET kérés feladata a login form generálása (ide irányít át, ha login szükséges)
 * A /login URL-re kell POST-olni a felhasználónév/jelszó párost (ha nincs `loginProcessingUrl()` konfig)
 * Sikertelen login kísérlet esetén a /login?error URL-re irányít (ha nincs `failureUrl()`)
 * Logout után a /login?logout URL-re irányít
 * A `permitAll()` azért szükséges, hogy a login page elérhető legyen bejelentkezés nélkül is (így is lehetne: `http.antMatchers("/login*").permitAll()`)
 * Sikeres login esetén oda irányít, ahonnan a login oldalra lettünk irányítva. De ha közvetlenül adtuk meg a login oldalt, a `defaultSuccessUrl()` definiálja a login utáni kezdő oldalt
+
+###### Saját login form
+* Bárhogy kinézhet, de kötött
+  * a form action attribútuma: contextRoot + "/login"
+    * vagy a loginProcessingUrl() értéke
+  * a felhasználónév és a jelszó input neve:
+    * "username" és "password"
+      * vagy a userNameParameter() ill. passwordParameter() értéke
+* A kijelentkezést ez az URL végzi el: "logout"
+  * de csak POST kérésre (CSRF védelem)
+  * testre szabási lehetőségek:
+    * logoutUrl()
+    * logoutSuccessUrl()
+
 
 #### Autorizáció
 ### REST autentikáció és autorizáció
