@@ -188,6 +188,21 @@ public class AppConfig extends WebSecurityConfigurerAdapter {
     * logoutUrl()
     * logoutSuccessUrl()
 
+###### Adatbázis alapú autentikáció
+* Az első példában a konfig fájlba voltak beleégetve a user adatok
+Valós környezetben ezek máshol vannak tárolva, elérésükhöz megfelelő AuthenticationProvider-t kell beállítani, pl.
+```java
+@Autowired
+private DataSource dataSource;
+
+@Override
+public void configure(AuthenticationManagerBuilder auth) throws Exception {
+  auth.
+    .jdbcAuthentication()
+    .dataSource(dataSource)
+    .withDefaultSchema();
+}
+```
 
 #### Autorizáció
 ### REST autentikáció és autorizáció
