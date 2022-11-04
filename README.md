@@ -160,6 +160,19 @@ public class AppConfig extends WebSecurityConfigurerAdapter {
   * Konfigja kicsit nehézkes (egy spring security átal nyújtott filtert kell beállítani)
 * http.httpBasic();
 
+##### Saját login form és adatbázis alapú autentikáció
+```java
+  .formLogin()
+  .loginPage("/login")
+  .defaultSuccessUrl("/index")
+  .permitAll()
+```
+* A /login-ra küldött GET kérés feladata a login form generálása (ide irányít át, ha login szükséges)
+* A /login URL-re kell POST-olni a felhasználónév/jelszó párost (ha nincs `loginProcessingUrl()` konfig)
+* Sikertelen login kísérlet esetén a /login?error URL-re irányít (ha nincs `failureUrl()`)
+* Logout után a /login?logout URL-re irányít
+* A `permitAll()` azért szükséges, hogy a login page elérhető legyen bejelentkezés nélkül is (így is lehetne: `http.antMatchers("/login*").permitAll()`)
+* Sikeres login esetén oda irányít, ahonnan a login oldalra lettünk irányítva. De ha közvetlenül adtuk meg a login oldalt, a `defaultSuccessUrl()` definiálja a login utáni kezdő oldalt
 
 #### Autorizáció
 ### REST autentikáció és autorizáció
